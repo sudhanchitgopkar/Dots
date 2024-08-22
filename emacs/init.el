@@ -1,30 +1,37 @@
 ;; Add MELPA to packages
+;;-------------------------------------------------------------------------
 (require 'package)
 (add-to-list 'package-archives '("MELPA" . "http://melpa.org/packages/") t)
 (package-initialize)
 
 ;; Spaces, not tabs
+;;-------------------------------------------------------------------------
 (setq-default indent-tabs-mode nil)
 
 ;; Disable menu bar
+;;-------------------------------------------------------------------------
 (menu-bar-mode -1) 
 
 ;; Enable Doom mode line
+;;-------------------------------------------------------------------------
 (require 'doom-modeline)
 (doom-modeline-mode 1)
 (setq doom-modeline-height 15)
 (setq doom-modeline-icon t)
 
 ;; Set locs for autosave files
+;;-------------------------------------------------------------------------
 (setq backup-directory-alist
       `((".*" . "~/.emacs.d/saves")))
 (setq auto-save-file-name-transforms
       `((".*" "~/.emacs.d/saves" t)))
 
 ;; Enable line numbering globally
+;;-------------------------------------------------------------------------
 (global-display-line-numbers-mode)
 
 ;; Enable auto-completion
+;;-------------------------------------------------------------------------
 (require 'auto-complete)
 (require 'auto-complete-config)
 (ac-config-default)
@@ -44,23 +51,32 @@
 (define-key ac-mode-map (kbd "M-TAB") 'auto-complete)
 
 ;;Enable multiple cursors
+;;-------------------------------------------------------------------------
 (require 'multiple-cursors)
 (global-set-key (kbd "C-c C-c") 'mc/edit-lines)
 
+;; Customize appearance
+;;-------------------------------------------------------------------------
 (custom-set-faces
+ ;; Focus on current line number
  '(line-number ((t (:foreground "#5c6370" :background nil :slant italic))))
  '(line-number-current-line ((t (:foreground "gold" :background nil :weight bold))))
+ ;; Matchy mode line
  '(mode-line ((t (:background "gold" :foreground "#1a1a1a" :weight bold :box nil))))
  '(mode-line-inactive ((t (:background "gold" :foreground "#1a1a1a" :box nil)))))
 (custom-set-variables
+ ;; Use Dracula
  '(custom-enabled-themes `(dracula))
+ ;; And tell emacs it's safe
  '(custom-safe-themes
    '("c650a74280e8ce4ae4b50835b7a3bc62aeffa202ffea82260e529f0a69027696" default))
+ ;; Here are all of the packages we've installed
  '(package-selected-packages
    '(dracula-theme multiple-cursors moody doom-modeline auto-complete all-the-icons)))
 (set-face-background 'default "unspecified-bg")
 
-;; Set ToDo states and colors
+;; Set todo states and colors
+;;-------------------------------------------------------------------------
 (setq org-todo-keywords
       '((sequence "TODO" "IN-PROG" "WAITING" "|" "DONE" "MIGRATED")))
 
@@ -68,6 +84,6 @@
       '(("TODO" . "red") ("IN-PROG" . "orange")
         ("WAITING" . "yellow") ("DONE" . "green")("MIGRATED" . "light blue")))
 
-;; Add appropriate key-bindings and files to org-agenda
+;; Add org-agenda keybindings
 (global-set-key (kbd "C-c a") #'org-agenda)
 (setq org-agenda-files '("~/Workflow/ToDo"))
