@@ -50,8 +50,8 @@
 (custom-set-faces
  '(line-number ((t (:foreground "#5c6370" :background nil :slant italic))))
  '(line-number-current-line ((t (:foreground "gold" :background nil :weight bold))))
- '(mode-line ((t (:background "gold" :foreground "black" :box nil))))
- '(mode-line-inactive ((t (:background "gold" :foreground "black" :box nil)))))
+ '(mode-line ((t (:background "gold" :foreground "#1a1a1a" :weight bold :box nil))))
+ '(mode-line-inactive ((t (:background "gold" :foreground "#1a1a1a" :box nil)))))
 (custom-set-variables
  '(custom-enabled-themes `(dracula))
  '(custom-safe-themes
