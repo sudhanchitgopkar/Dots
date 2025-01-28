@@ -8,7 +8,9 @@ brew "emacs"                     # Emacs editor
 brew "tree"                      # Display directory tree structure
 brew "nginx"                     # Web server
 brew "neofetch"                  # System information tool
-brew "fortune"			 # Display random fortunes
+brew "fortune"			             # Display random fortunes
+brew "zsh-autosuggestions"       # Add autosuggestions to zsh
+brew "starship"                  # Better shell prompt
 
 # Homebrew casks (GUI apps)
 cask "google-chrome"             # Chrome browser
@@ -18,10 +20,9 @@ cask "slack"                     # Slack messaging
 cask "discord"                   # Discord messaging
 cask "vlc"                       # VLC media player
 cask "spotify"                   # Spotify music player
-cask "vscode"                    # Visual Studio Code GUI
 cask "font-hack-nerd-font"       # Nerd font for terminal
 cask "whatsapp"                  # WhatsApp for macOS
-
-
-
-
+cask "visual-studio-code"        # Visual Studio Code GUI
+cask "processing"                # Processing Graphics API
+cask "font-fira-code-nerd-font"  # Monospace terminal font
+cask "amethyst"                  # Tiling WM
