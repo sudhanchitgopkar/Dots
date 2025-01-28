@@ -1,0 +1,27 @@
+# Homebrew formulas (binaries)
+brew "git"                       # Version control
+brew "tmux"                      # Terminal multiplexer
+brew "wget"                      # File downloader
+brew "curl"                      # URL fetching tool
+brew "python"                    # Python programming language
+brew "emacs"                     # Emacs editor
+brew "tree"                      # Display directory tree structure
+brew "nginx"                     # Web server
+brew "neofetch"                  # System information tool
+brew "fortune"			 # Display random fortunes
+
+# Homebrew casks (GUI apps)
+cask "google-chrome"             # Chrome browser
+cask "iterm2"                    # iTerm2 terminal
+cask "zoom"                      # Zoom meetings
+cask "slack"                     # Slack messaging
+cask "discord"                   # Discord messaging
+cask "vlc"                       # VLC media player
+cask "spotify"                   # Spotify music player
+cask "vscode"                    # Visual Studio Code GUI
+cask "font-hack-nerd-font"       # Nerd font for terminal
+cask "whatsapp"                  # WhatsApp for macOS
+
+
+
+
