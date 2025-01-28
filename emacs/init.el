@@ -7,6 +7,7 @@
 ;; Spaces, not tabs
 ;;-------------------------------------------------------------------------
 (setq-default indent-tabs-mode nil)
+(setq-default tab-width 2)
 
 ;; Disable menu bar
 ;;-------------------------------------------------------------------------
@@ -16,15 +17,20 @@
 ;;-------------------------------------------------------------------------
 (require 'doom-modeline)
 (doom-modeline-mode 1)
+;; Set the height of the mode line
 (setq doom-modeline-height 15)
+;; Enable icons (require 'all-the-icons' package)
 (setq doom-modeline-icon t)
 
 ;; Set locs for autosave files
 ;;-------------------------------------------------------------------------
-(setq backup-directory-alist
-      `((".*" . "~/.emacs.d/saves")))
+;; Ensure the autosave directory exists
+(unless (file-exists-p "~/.emacs.d/autosaves")
+  (make-directory "~/.emacs.d/autosaves"))
+
+;; Set the auto-save file location for files ending with ~
 (setq auto-save-file-name-transforms
-      `((".*" "~/.emacs.d/saves" t)))
+      `((".*~" "~/.emacs.d/autosaves/" t)))
 
 ;; Enable line numbering globally
 ;;-------------------------------------------------------------------------
@@ -50,6 +56,26 @@
 ;; Key-binding for auto-complete mode
 (define-key ac-mode-map (kbd "M-TAB") 'auto-complete)
 
+;; Use keybindings to switch themes
+;;-------------------------------------------------------------------------
+;; Load the solarized-theme package
+(load-theme 'solarized-light t)
+;; Define a function to swith to solarized-light 
+(defun switch-to-solarized-light ()
+      (interactive)
+      (load-theme 'solarized-light t)
+      (set-face-background 'default "unspecified-bg"))
+;; Set a key binding to switch to solarized-light
+(global-set-key (kbdd "C-c s l") 'switch-to-solarized-light)
+
+;; Define a function to swith to dracula
+(defun switch-to-dracula ()
+      (interactive)
+      (load-theme 'dracula t)
+      (set-face-background 'default "unspecified-bg"))
+;; Set a key binding to switch to dracula
+(global-set-key (kbdd "C-c d r") 'switch-to-dracula)
+
 ;;Enable multiple cursors
 ;;-------------------------------------------------------------------------
 (require 'multiple-cursors)
@@ -62,18 +88,24 @@
  '(line-number ((t (:foreground "#5c6370" :background nil :slant italic))))
  '(line-number-current-line ((t (:foreground "gold" :background nil :weight bold))))
  ;; Matchy mode line
- '(mode-line ((t (:background "gold" :foreground "#1a1a1a" :weight bold :box nil))))
- '(mode-line-inactive ((t (:background "gold" :foreground "#1a1a1a" :box nil)))))
+ '(mode-line ((t (:background "gold" :foreground "black" :weight bold :box nil))))
+ '(mode-line-inactive ((t (:background "gold" :foreground "black" :box nil)))))
 (custom-set-variables
  ;; Use Dracula
  '(custom-enabled-themes `(dracula))
- ;; And tell emacs it's safe
- '(custom-safe-themes
-   '("c650a74280e8ce4ae4b50835b7a3bc62aeffa202ffea82260e529f0a69027696" default))
  ;; Here are all of the packages we've installed
  '(package-selected-packages
-   '(dracula-theme multiple-cursors moody doom-modeline auto-complete all-the-icons)))
+   '(highlight-indent-guides solarized-theme typescript-mode dracula-theme multiple-cursors moody doom-modeline auto-complete all-the-icons)))
+;; Remove bg by defuault
 (set-face-background 'default "unspecified-bg")
+
+;; Allow toggling whitespace mode
+;;-------------------------------------------------------------------------
+(defun toggle-whitespace-mode ()
+      (interactive)
+      (whitespace-mode 'toggle)
+(global-set-key (kbd "C-x C-w") 'toggle-whitespace-mode)
+
 
 ;; Set todo states and colors
 ;;-------------------------------------------------------------------------
