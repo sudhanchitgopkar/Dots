@@ -8,5 +8,8 @@ export CLICOLOR=1
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 # Set default editor to emacs
 export EDITOR="emacs -nw"
+# Add aliases
+alias rm="rm -i"
+alias cls="clear;ls"
 # Print fortune on startup
 fortune
