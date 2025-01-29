@@ -11,6 +11,7 @@ brew "neofetch"                  # System information tool
 brew "fortune"			             # Display random fortunes
 brew "zsh-autosuggestions"       # Add autosuggestions to zsh
 brew "starship"                  # Better shell prompt
+brew "gnupg"                     # GPG key tools
 
 # Homebrew casks (GUI apps)
 cask "google-chrome"             # Chrome browser
