@@ -13,6 +13,7 @@ brew "zsh-autosuggestions"       # Add autosuggestions to zsh
 brew "starship"                  # Better shell prompt
 brew "gnupg"                     # GPG key tools
 brew "ffmpeg"                    # Video tools
+brew "markdown"                  # Write easier
 
 # Homebrew casks (GUI apps)
 cask "google-chrome"             # Chrome browser
