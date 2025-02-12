@@ -14,7 +14,7 @@ brew "starship"                  # Better shell prompt
 brew "gnupg"                     # GPG key tools
 brew "ffmpeg"                    # Video tools
 brew "markdown"                  # Write easier
-
+brew "pandocs"                   # Filetype conversion
 # Homebrew casks (GUI apps)
 cask "google-chrome"             # Chrome browser
 cask "iterm2"                    # iTerm2 terminal
