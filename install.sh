@@ -26,6 +26,7 @@ if command -v brew &> /dev/null; then
 else
     echo "⚠️ Homebrew is not installed. Installing now... 🚀"
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
 # ==============================
@@ -70,6 +71,10 @@ fi
 # ==============================
 echo -e "\\n🚀 Creating symlink from $PWD/starship/starship.toml to ~/.config/starship.toml..."
 if [ -f "$PWD/starship/starship.toml" ]; then
+    if [ ! -d "$PWD/.config" ]; then
+        echo "Directory $PWD/.config does not exist. Creating it now..."
+        mkdir -p "$PWD/.config"
+    fi
     ln -sf "$PWD/starship/starship.toml" "$HOME/.config/starship.toml"
     echo "✅ Symlink created and existing symlink overridden."
 else
