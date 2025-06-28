@@ -99,9 +99,13 @@
  ;; If there is more than one, they won't work right.
  '(custom-enabled-themes `(dracula))
  '(custom-safe-themes
-   '("11819dd7a24f40a766c0b632d11f60aaf520cf96bd6d8f35bae3399880937970" default))
+   '("a8e721dc14961b37d513b53f5f688c39f5d20b86a2e1f6142eb6c730f2ddd86f"
+     "11819dd7a24f40a766c0b632d11f60aaf520cf96bd6d8f35bae3399880937970"
+     default))
  '(package-selected-packages
-   '(highlight-indent-guides solarized-theme typescript-mode dracula-theme multiple-cursors moody doom-modeline auto-complete all-the-icons)))
+   '(highlight-indent-guides solarized-theme typescript-mode
+                             dracula-theme multiple-cursors moody
+                             doom-modeline auto-complete all-the-icons)))
 ;; Remove bg by defuault
 (set-face-background 'default "unspecified-bg")
 
