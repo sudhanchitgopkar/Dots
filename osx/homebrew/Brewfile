@@ -8,7 +8,7 @@ brew "emacs"                     # Emacs editor
 brew "tree"                      # Display directory tree structure
 brew "nginx"                     # Web server
 brew "neofetch"                  # System information tool
-brew "fortune"			             # Display random fortunes
+brew "fortune"			 # Display random fortunes
 brew "zsh-autosuggestions"       # Add autosuggestions to zsh
 brew "starship"                  # Better shell prompt
 brew "gnupg"                     # GPG key tools
