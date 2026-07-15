@@ -24,7 +24,7 @@ cask "discord"                   # Discord messaging
 cask "vlc"                       # VLC media player
 cask "spotify"                   # Spotify music player
 cask "font-hack-nerd-font"       # Nerd font for terminal
-cask "whatsapp"                  # WhatsApp for macOS
+# cask "whatsapp"                  WhatsApp for macOS, no longer installing via HB due to security considerations.
 cask "visual-studio-code"        # Visual Studio Code GUI
 cask "processing"                # Processing Graphics API
 cask "font-fira-code-nerd-font"  # Monospace terminal font
